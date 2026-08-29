@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Guess My Answer ❤️</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="logo">Guess My Answer ❤️</div><div id="status">Offline</div></div>
+
+  <section id="home" class="screen active">
+    <div class="hero">
+      <div class="heart">❤️</div>
+      <h1>Evlo nalla enna purinjiruka?</h1>
+      <p>10 fun questions • secret answers • final relationship score</p>
+    </div>
+    <div class="card">
+      <input id="name" maxlength="18" placeholder="Un name / nickname">
+      <button id="createBtn">❤️ Create Room</button>
+      <div class="or">OR</div>
+      <input id="roomInput" maxlength="8" placeholder="Room code">
+      <button class="secondary" id="joinBtn">💞 Join Room</button>
+      <p id="homeMsg" class="msg"></p>
+    </div>
+  </section>
+
+  <section id="lobby" class="screen">
+    <div class="card center">
+      <p class="small">Room code</p>
+      <div id="roomCode" class="room">------</div>
+      <button class="secondary" id="copyBtn">📋 Copy Code</button>
+      <p id="players">Waiting for partner...</p>
+      <div class="loader"></div>
+      <p class="muted">Partner-ku indha code share pannu ❤️</p>
+    </div>
+  </section>
+
+  <section id="game" class="screen">
+    <div class="gamebar">
+      <span id="round">Question 1 / 10</span>
+      <span id="turn">Your turn</span>
+    </div>
+    <div class="card questionCard">
+      <div id="phase" class="pill">Your real answer</div>
+      <h2 id="question">Loading...</h2>
+      <p id="instruction" class="muted"></p>
+      <div id="options" class="options"></div>
+      <button id="clueBtn" class="clue">💡 Clue (-2 points)</button>
+      <div id="clueText" class="clueText"></div>
+      <button id="submitBtn" disabled>Submit ❤️</button>
+      <p id="gameMsg" class="msg"></p>
+    </div>
+  </section>
+
+  <section id="result" class="screen">
+    <div class="hero">
+      <div class="heart">🏆</div>
+      <h1 id="resultTitle">Result</h1>
+      <p id="resultText"></p>
+    </div>
+    <div class="scoreGrid">
+      <div class="score"><span id="myName">You</span><b id="myScore">0</b><small>points</small></div>
+      <div class="score"><span id="partnerName">Partner</span><b id="partnerScore">0</b><small>points</small></div>
+    </div>
+    <div class="card center">
+      <div id="percent" class="percent">0%</div>
+      <p>How well you understand each other</p>
+      <button id="againBtn">🔄 Play Again</button>
+      <button class="secondary" id="homeBtn">🏠 New Room</button>
+    </div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
