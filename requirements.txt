@@ -12,3 +12,5 @@ python-jose
 requests
 httpx
 google-generativeai
+reportlab
+pillow
