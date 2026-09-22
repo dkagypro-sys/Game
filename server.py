@@ -336,14 +336,6 @@ async def signup(req: SignupReq):
             "referred_mobile": mobile, "referred_id": profile["id"],
             "bonus_awarded": 10.0, "created_at": now_iso() # History-la ₹10 record aagum
         })
-    await db.profiles.insert_one(profile)
-    if referrer_id:
-        await db.profiles.update_one({"id": referrer_id}, {"$inc": {"bonus_cash": 50.0}})
-        await db.referrals.insert_one({
-            "id": make_id(), "referrer_id": referrer_id,
-            "referred_mobile": mobile, "referred_id": profile["id"],
-            "bonus_awarded": 50.0, "created_at": now_iso()
-        })
         await db.notifications.insert_one({
             "id": make_id(), "user_id": referrer_id,
             "title": "Referral Bonus!",
